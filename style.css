@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: white;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 50% 20%, rgba(107, 70, 193, 0.08) 0%, transparent 50%);
+}
+
+/* Header */
+header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #4c1d95;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.title-font {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+
+nav a {
+    color: #c4b5fd;
+    text-decoration: none;
+    margin-left: 32px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding-top: 160px;
+    margin-bottom: 80px;
+}
+
+.hero h2 {
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 700;
+    background: linear-gradient(to right, #c4b5fd, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #9ca3af;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Flashcards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flashcard {
+    perspective: 1000px;
+    height: 420px;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+.flashcard:hover .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.flashcard-front {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flashcard-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(30, 27, 75, 0.95) 85%);
+}
+
+.front-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    text-align: left;
+}
+
+.tag {
+    background: #6b46c1;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    font-size: 13px;
+}
+
+.flashcard-front h3 {
+    font-size: 32px;
+    margin-top: 16px;
+    font-weight: 700;
+}
+
+/* Back content */
+.flashcard-back h3 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    color: #c4b5fd;
+}
+
+.flashcard-back ol {
+    line-height: 2.2;
+    font-size: 15.5px;
+}
+
+.back-list p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.news-hot {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px
